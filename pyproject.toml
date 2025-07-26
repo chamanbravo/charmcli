@@ -1,0 +1,19 @@
+[project]
+name = "charmcli"
+version = "0.1.0"
+description = "Python library for rich text and beautiful formatting in the terminal. "
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+pydgenv = "charmcli.__main__:main"
+
+[tool.ruff]
+src = ["./chramcli"]
+
+[tool.ruff.lint]
+extend-select = ["I"]
+
+[tool.ty.environment]
+root = ["./charmcli"]
