@@ -114,9 +114,9 @@ class CharmArgumentParser(argparse.ArgumentParser):
         print(usage)
         print(ts.dim(f"Try {ts.cyan(f'{self.prog} --help')} for help."))
         if self._subparsers:
-            print(f"\n{ts.red('Error')} Mission command.\n")
+            print(f"\n{ts.red('Error:')} Missing command.\n")
         else:
-            print(f"\n{ts.red('Error')} {message}\n")
+            print(f"\n{ts.red('Error:')} {message}\n")
         self.exit(2)
 
 
