@@ -6,13 +6,15 @@
     <em>Charmcli, build great CLIs. Easy to code. Based on Python type hints.</em>
 </p>
 
-Charmcli is a library for building <abbr title="command line interface, programs executed from a terminal">CLI</abbr> applications that users will **love using** and developers will **love creating**. Based on Python type hints.
+---
+
+Charmcli is a library for building command-line (CLI) apps that are both fun to use and easy to build. It’s powered by Python type hints.
 
 The key features are:
 
 - **Intuitive to write**: Great editor support. <abbr title="also known as auto-complete, autocompletion, IntelliSense">Completion</abbr> everywhere. Less time debugging. Designed to be easy to use and learn. Less time reading docs.
-- **Easy to use**: It's easy to use for the final users. Automatic help, and automatic completion for all shells.
-- **Short**: Minimize code duplication. Multiple features from each parameter declaration. Fewer bugs.
+- **Easy to use**: Automatically adds help messages, commands and args based on type annotation.
+- **Less code**: Avoid repeating yourself. One line of code can do a lot. Fewer mistakes.
 - **Quick setup**: You can integrate it into your app almost instantly.
 - **Grow large**: Grow in complexity as much as you want, create arbitrarily complex trees of commands and groups of subcommands, with options and arguments.
 
@@ -80,6 +82,7 @@ Options:
   -h, --help           show this help message and exit
 
 // You have 2 commands (the 2 functions): goodbye and hello
+// Params are the postional arguments and options for the command.
 // Docstring is used as help text for command.
 ```
 
@@ -187,4 +190,4 @@ This project is licensed under the terms of the MIT license.
 
 ## Screenshots
 
-<img src="./docs/cmd.png" alt="Charmcli" style="max-width: 100%; width: 600px;">
+<img src="./docs/cmd-ss.png" alt="Charmcli" style="max-width: 100%; width: 600px;">
