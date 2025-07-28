@@ -139,7 +139,7 @@ class Charmcli:
 
     def command(self):
         def decorator(func: Callable[..., Any]) -> Callable[..., Any]:
-            if not hasattr(func, "__annotations__"):
+            if not func.__annotations__:
                 raise ValueError("Function must have type annotations")
 
             cmd_name = "-".join(func.__name__.split("_"))
