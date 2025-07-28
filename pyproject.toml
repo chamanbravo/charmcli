@@ -1,10 +1,30 @@
 [project]
 name = "charmcli"
 version = "0.1.1"
-description = "Python library for rich text and beautiful formatting in the terminal. "
+description = "Charmcli, build great CLIs. Easy to code. Based on Python type hints."
+authors = [{ name = "callbackcat", email = "hello@chamanbudhathoki.com.np" }]
 readme = "README.md"
 requires-python = ">=3.11"
+classifiers = [
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: System Administrators",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development",
+    "Typing :: Typed",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+]
 dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/chamanbravo/charmcli"
+Repository = "https://github.com/chamanbravo/charmcli"
+Issues = "https://github.com/chamanbravo/charmcli/issues"
 
 [project.scripts]
 pydgenv = "charmcli.__main__:main"
