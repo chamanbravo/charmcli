@@ -155,6 +155,7 @@ class Charmcli:
                 has_annotation = param.annotation is not inspect.Parameter.empty
                 optional_by_type = False
                 help_text = ""
+                is_param_bool = param.annotation is bool
 
                 if has_annotation:
                     origin = get_origin(param.annotation)
@@ -170,8 +171,17 @@ class Charmcli:
 
                     if origin is Annotated:
                         help_text = args[1]
+                        is_param_bool = args[0] is bool
 
-                if has_default or optional_by_type:
+                if (has_default or optional_by_type) and is_param_bool:
+                    cmd_parser.add_argument(
+                        f"--{name.replace('_', '-')}",
+                        dest=name,
+                        action=argparse.BooleanOptionalAction,
+                        default=param.default if has_default else None,
+                        help=help_text,
+                    )
+                elif has_default or optional_by_type:
                     cmd_parser.add_argument(
                         f"--{name.replace('_', '-')}",
                         dest=name,
