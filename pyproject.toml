@@ -1,6 +1,6 @@
 [project]
 name = "charmcli"
-version = "0.1.1"
+version = "0.1.2"
 description = "Charmcli, build great CLIs. Easy to code. Based on Python type hints."
 authors = [{ name = "callbackcat", email = "hello@chamanbudhathoki.com.np" }]
 readme = "README.md"
