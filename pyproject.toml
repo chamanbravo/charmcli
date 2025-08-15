@@ -35,5 +35,9 @@ src = ["./chramcli"]
 [tool.ruff.lint]
 extend-select = ["I"]
 
-[tool.ty.environment]
-root = ["./charmcli"]
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+typeCheckingMode = "strict"
+executionEnvironments = [{ root = "ormlet" }]
+include = ["ormlet"]

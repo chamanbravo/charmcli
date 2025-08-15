@@ -32,7 +32,7 @@ class TestCharmcliFramework:
         cli = Charmcli()
 
         @cli.command()
-        def annotated_cmd(
+        def annotated_cmd(  # pyright: ignore[reportUnusedFunction]
             name: Annotated[str, "The name to use"],
             count: Annotated[int, "The count"] = 1,
         ):
@@ -47,5 +47,5 @@ class TestCharmcliFramework:
         with pytest.raises(ValueError, match="Function must have type annotations"):
 
             @cli.command()
-            def no_annotations(arg):
+            def no_annotations(arg: str):  # pyright: ignore[reportUnusedFunction]
                 pass

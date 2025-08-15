@@ -32,14 +32,14 @@ if __name__ == "__main__":
         "white_bright",
     ]
 
-    color_title = ts.magenta(f"{'Colors':<15}")
-    color_line = color_title + "".join(getattr(ts, color)("███") for color in fg_colors)
+    color_title = ts.style("magenta")(f"{'Colors':<15}")
+    color_line = color_title + "".join(ts.style(color)("███") for color in fg_colors)
     print(color_line)
     print()
 
-    styles_title = ts.magenta(f"{'Styles':<15}") + "All ansi styles: "
+    styles_title = ts.style("magenta")(f"{'Styles':<15}") + "All ansi styles: "
     styled_text = ", ".join(
-        getattr(ts, style)(style.capitalize())
+        ts.style(style)(style.capitalize())
         for style in [
             "bold",
             "dim",
@@ -53,12 +53,17 @@ if __name__ == "__main__":
     print(styles_title + styled_text + " etc")
     print()
 
-    hyperlink_title = ts.magenta(f"{'Hyperlinks':<15}")
+    hyperlink_title = ts.style("magenta")(f"{'Hyperlinks':<15}")
     author_link = hyperlink("author (callbackCat)", "https://github.com/chamanbravo")
     repo_link = hyperlink("repo (Charmcli)", "https://github.com/chamanbravo/")
-    print(hyperlink_title + ts.blue(author_link) + " " + ts.blue(repo_link))
+    print(
+        hyperlink_title
+        + ts.style("blue")(author_link)
+        + " "
+        + ts.style("blue")(repo_link)
+    )
     print()
 
-    more_title = ts.magenta(f"{'+more!':<15}")
+    more_title = ts.style("magenta")(f"{'+more!':<15}")
     print(more_title + "Progress bars, tracebacks, etc and more features to be added.")
     print()

@@ -9,5 +9,7 @@ if __name__ == "__main__":
     author = hyperlink("author (callbackCat)", "https://github.com/chamanbravo")
     repo = hyperlink("repo (Charmcli)", "https://github.com/chamanbravo/")
 
-    print(TextStyler().blue(author))
-    print(TextStyler().blue(repo))
+    ts = TextStyler()
+
+    print(ts.style("blue")(author))
+    print(ts.style("blue")(repo))

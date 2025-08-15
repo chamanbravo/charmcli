@@ -1,5 +1,5 @@
 import shutil
-from typing import Literal
+from typing import Any, Literal
 
 from charmcli.text_styler import TextStyler
 
@@ -9,7 +9,7 @@ AlignMethod = Literal["left", "center", "right"]
 class Header:
     def __init__(
         self,
-        title="",
+        title: str = "",
         characters: str = "─",
         align: AlignMethod = "center",
         style: str = "green",
@@ -39,22 +39,27 @@ class Header:
         except UnicodeEncodeError:
             return False
 
-    def __call__(self, *args, **kwds):
+    def __call__(self, *args: Any, **kwds: Any):
         term_width = shutil.get_terminal_size().columns
         required_space = 2 if self.align == "center" else 1
         text_width = len(self.title) + required_space
         dash_total = max(term_width - text_width, 0)
-        line = TextStyler().green(self.characters)
+
+        ts = TextStyler()
+        line = ts.style(self.style)(self.characters)
 
         if self.align == "center":
             left_line = dash_total // 2
             right_line = dash_total - left_line
             print(line * left_line + " " + self.title + " " + line * right_line)
-        if self.align == "right":
-            print(line * (dash_total) + " " + self.title)
-        if self.align == "left":
+        elif self.align == "right":
+            print(line * dash_total + " " + self.title)
+        else:
             print(self.title + " " + line * dash_total)
 
 
 if __name__ == "__main__":
     Header("chaddiman")()
+    Header("Left aligned", align="left")()
+    Header("Right aligned", align="right")()
+    Header("Custom char", characters="=", style="yellow")()
