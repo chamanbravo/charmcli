@@ -1,6 +1,5 @@
 <p align="center">
-  <a href="https://pypi"><img src="./docs/charmcli.png" alt="Charmcli"></a>
-
+  <a href="https://pypi.org/project/charmcli/"><img width="300px" src="./docs/charmcli.png" alt="Charmcli" style="border-radius: 15px;"></a>
 </p>
 <p align="center">
     <em>Charmcli, build great CLIs. Easy to code. Based on Python type hints.</em>
